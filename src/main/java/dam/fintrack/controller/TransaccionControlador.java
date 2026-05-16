@@ -109,4 +109,14 @@ public class TransaccionControlador {
         }
         return total;
     }
+
+    public double calcularTotalGastos (ArrayList<Transaccion> lista) {
+        double total = 0;
+        for (Transaccion t : lista) {
+            if ((t.getTipo().equals("GASTO"))) {
+                total -= t.getImporte();
+            }
+        }
+        return total;
+    }
 }
